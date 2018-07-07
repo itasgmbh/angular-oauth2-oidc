@@ -255,10 +255,15 @@ See the [documentation](https://manfredsteyer.github.io/angular-oauth2-oidc/docs
 * [Build an Ionic App with User Authentication](https://developer.okta.com/blog/2017/08/22/build-an-ionic-app-with-user-authentication)
 
 
+## Build and publish patched version
+```
+  npm install -g cpr \ 
+  && npm run build \ 
+  && npm --registry=<private registry> publish --tag angular-oauth2-oidc@4.0.2-patch.1 dist\lib.tgz
+```
 
-
-
-
-
-
+### Using the patched version
+```
+  npm i angular-oauth2-oidc@4.0.2-patch.1 --save
+```
 

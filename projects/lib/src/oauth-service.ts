@@ -383,7 +383,10 @@ export class OAuthService extends AuthConfig {
                     this.loginUrl = doc.authorization_endpoint;
                     this.logoutUrl = doc.end_session_endpoint || this.logoutUrl;
                     this.grantTypesSupported = doc.grant_types_supported;
-                    this.issuer = doc.issuer;
+                    // workaround temporary problem with Apereo CAS #3335
+                    if(doc.issuer) {
+                      this.issuer = doc.issuer;
+                    }
                     this.tokenEndpoint = doc.token_endpoint;
                     this.userinfoEndpoint = doc.userinfo_endpoint;
                     this.jwksUri = doc.jwks_uri;
